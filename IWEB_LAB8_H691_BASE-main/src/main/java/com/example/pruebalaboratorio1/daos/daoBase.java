@@ -7,7 +7,7 @@ import com.example.pruebalaboratorio1.beans.streaming;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class peliculaDao extends baseDao{
+public class daoBase extends baseDao{
 
     public ArrayList<pelicula> listarPeliculas() {
 

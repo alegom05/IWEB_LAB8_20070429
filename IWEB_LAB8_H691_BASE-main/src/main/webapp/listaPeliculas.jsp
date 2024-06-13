@@ -49,9 +49,11 @@
         <th>Rating</th>
         <th>BoxOffice</th>
         <th>Genero</th>
+        <th>Duracion</th>
+        <th>Streaming</th>
+        <th>Premio Oscar</th>
         <th>Actores</th>
         <th>Borrar</th>
-
     </tr>
     <%
         for (pelicula movie : listaPeliculas) {
@@ -64,6 +66,9 @@
         <td><%=movie.getRating()%>/10</td>
         <td>$<%=formatter.format(movie.getBoxOffice())%></td>
         <td><%=movie.getGenero()%></td>
+        <td><%=movie.getDuracion()%></td>
+        <td><%=movie.getStreaming()%></td>
+        <td><%=movie.isPremioOscar()%></td>
         <td><a href="listaActores?idPelicula=<%= movie.getIdPelicula() %>">Ver Actores</a></td>
         <%
             if (1 == 1) {
