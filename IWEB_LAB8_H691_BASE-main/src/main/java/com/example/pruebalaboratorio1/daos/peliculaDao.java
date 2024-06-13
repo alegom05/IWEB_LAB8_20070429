@@ -61,13 +61,12 @@ public class peliculaDao extends baseDao{
                 movie.setGenero(nombregenero);
                 String duracion = rs.getString("duracion");
                 movie.setDuracion(duracion);
-                String streaming1 = rs.getString("nombre");
+                String streaming1 = rs.getString("nombreServicio");
                 movie.setStreaming(streaming1);
                 Boolean premioOscar = rs.getBoolean("premioOscar");
                 movie.setPremioOscar(premioOscar);
 
-
-                //boolean validador= validarBorrado(movie);
+                boolean validador= validarBorrado(movie);
                 //movie.setValidadorBorrado(validador);
 
                 listaPeliculas.add(movie);

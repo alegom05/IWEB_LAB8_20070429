@@ -94,8 +94,13 @@ public class pelicula {
         this.premioOscar = premioOscar;
     }
 
-    // private boolean validadorBorrado;
+    private boolean validadorBorrado;
 
+    public boolean isValidadorBorrado() {
+        return validadorBorrado;
+    }
 
-
+    public void setValidadorBorrado(boolean validadorBorrado) {
+        this.validadorBorrado = validadorBorrado;
+    }
 }

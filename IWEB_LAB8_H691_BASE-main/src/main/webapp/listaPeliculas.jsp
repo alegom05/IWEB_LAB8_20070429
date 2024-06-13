@@ -6,11 +6,14 @@
 <%@page import="com.example.pruebalaboratorio1.beans.streaming"%>
 <%@page import="java.text.NumberFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:useBean id="listaPeliculas2" type="java.util.ArrayList<beans.pelicula>" scope="request"/>
+
 <%
     //Job job = (Job) request.getAttribute("job");
     ArrayList<pelicula> listaPeliculas = (ArrayList) request.getAttribute("listaPeliculas");
     ArrayList<genero> listaGeneros = (ArrayList) request.getAttribute("listaGeneros");
     ArrayList<streaming> listaStreaming = (ArrayList) request.getAttribute("listaStreaming");
+    pelicula pelicula = new pelicula();
     String searchTerm = request.getParameter("searchTerm");
     genero generoSeleccionado = (genero) request.getAttribute("generoSeleccionado");
     streaming streamingSeleccionado = (streaming) request.getAttribute("streamingSeleccionado");
@@ -25,11 +28,18 @@
 <body>
 
 <h1>Lista de Películas</h1>
-
-<form action="listaPeliculas" method="POST">
+<%--Intente implementar el combobox--%>
+<form action="listaPeliculas2" method="POST">
     <div class="combobox-container">
-
-
+        <div class="form-group">
+            <label for peliculasId>Peliculas Id</label>
+            <select name="peliculaId" id="peliculaId" class="form-control">
+                <% for (pelicula i : listaPeliculas) {%>
+                <option value="<%=i.getIdPelicula()%>"><%pelicula.getTitulo();%>
+                </option>
+                <% }%>
+            </select>
+        </div>
         <input type="hidden" name="action" value="filtrar">
         <button type="submit">Filtrar</button>
         <form action="listaPeliculas?action=listar" method="GET">

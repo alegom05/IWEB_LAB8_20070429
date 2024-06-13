@@ -31,8 +31,6 @@ public class PeliculaServlet extends HttpServlet {
         switch (action) {
             case "listar":
 
-
-
                 ArrayList<pelicula> listaPeliculas = peliculaDao.listarPeliculas();
                 request.setAttribute("listaPeliculas", listaPeliculas);
 
@@ -45,6 +43,11 @@ public class PeliculaServlet extends HttpServlet {
                 response.sendRedirect(request.getContextPath()+"/listaPeliculas?action=listar");
                 break;
 
+            case "agregar":
+                request.setAttribute("listaPeliculas2", peliculaDao.listarPeliculas());
+
+                view = request.getRequestDispatcher("listaPeliculas.jsp");
+                view.forward(request,response);
         }
     }
 
